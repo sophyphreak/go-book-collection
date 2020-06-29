@@ -8,7 +8,7 @@ import (
 )
 
 // InterfaceRoot is the root of the user interface
-func InterfaceRoot(c book.Collection) {
+func InterfaceRoot(c *book.Collection) {
 	fmt.Println("Welcome to your book collection")
 	for {
 		var userInput string
@@ -21,14 +21,17 @@ func InterfaceRoot(c book.Collection) {
 		}
 		switch userInput {
 		case "display", "dis", "di":
+			displayCollection(c)
 		case "add", "ad", "a":
+			addBook(c)
 		case "update", "up", "u":
+			updateBook(c)
 		case "delete", "del", "de":
+			deleteBook(c)
 		default:
 			fmt.Println("Sorry, I did not understand that input. Please choose one of the given options.")
 			continue
 		}
-		fmt.Println("success")
 	}
 	fmt.Println("Thank you for using your book collection. Everything is saved for next time! :-)")
 }
