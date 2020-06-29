@@ -1,5 +1,10 @@
 package book
 
+import (
+	"errors"
+	"strconv"
+)
+
 // Collection is an array of Book
 type Collection struct {
 	Collection []Book `json:"collection"`
@@ -15,14 +20,18 @@ type Book struct {
 	PublicationYear int    `json:"publicationYear"`
 }
 
-func (c *Collection) findByID(id int) (int, Book) {
+func (c *Collection) findByID(id int) (int, Book, error) {
 	var bookIndex int
 	var book Book
 	for i, v := range c.Collection {
 		if v.ID == id {
 			bookIndex = i
 			book = v
+			break
 		}
 	}
-	return bookIndex, book
+	if (book == Book{}) {
+		return 0, Book{}, errors.New("Book with id of" + strconv.Itoa(id) + "not found")
+	}
+	return bookIndex, book, nil
 }
