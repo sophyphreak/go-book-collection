@@ -17,5 +17,6 @@ func (c *Collection) AddBook(title, author, publisher string, pages, publication
 		PublicationYear: publicationYear,
 	}
 	c.Collection = append(c.Collection, newBook)
+	c.Commit()
 	return id
 }
