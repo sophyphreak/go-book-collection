@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"io/ioutil"
 
-	"./books"
+	"./book"
 )
 
 func main() {
-	var collection books.Books
+	var collection book.Collection
 	populateCollection(&collection)
 
 	collection.AddBook("The Alchemist", "Paulo Coelho", "Some Publisher", 200, 1989)
@@ -18,5 +18,5 @@ func main() {
 		panic(err)
 	}
 
-	err = ioutil.WriteFile("books.json", f, 0644)
+	err = ioutil.WriteFile("collection.json", f, 0644)
 }

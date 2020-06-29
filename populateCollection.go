@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 	"os"
 
-	"./books"
+	"./book"
 )
 
-func populateCollection(collection *books.Books) {
-	jsonFile, err := os.Open("books.json")
+func populateCollection(collection *book.Collection) {
+	jsonFile, err := os.Open("collection.json")
 	if err != nil {
 		panic(err)
 	}

@@ -1,10 +1,10 @@
-package books
+package book
 
 import "fmt"
 
-// DisplayBooks prints all data from all books
-func (b *Books) DisplayBooks() {
-	for i, v := range b.Books {
+// DisplayCollection prints all data from all books
+func (c *Collection) DisplayCollection() {
+	for i, v := range c.Collection {
 		fmt.Println("")
 		fmt.Println("Book", i+1)
 		fmt.Println("id:", v.ID)

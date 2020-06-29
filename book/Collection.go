@@ -1,8 +1,8 @@
-package books
+package book
 
-// Books is an array of Book
-type Books struct {
-	Books []Book `json:"books"`
+// Collection is an array of Book
+type Collection struct {
+	Collection []Book `json:"collection"`
 }
 
 // Book is a single book
@@ -15,10 +15,10 @@ type Book struct {
 	PublicationYear int    `json:"publicationYear"`
 }
 
-func (b *Books) findByID(id int) (int, Book) {
+func (c *Collection) findByID(id int) (int, Book) {
 	var bookIndex int
 	var book Book
-	for i, v := range b.Books {
+	for i, v := range c.Collection {
 		if v.ID == id {
 			bookIndex = i
 			book = v
