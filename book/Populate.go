@@ -1,14 +1,13 @@
-package main
+package book
 
 import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
-
-	"./book"
 )
 
-func populateCollection(collection *book.Collection) {
+// Populate populates a given collection with the json data in collection.json
+func (c *Collection) Populate() {
 	jsonFile, err := os.Open("collection.json")
 	if err != nil {
 		panic(err)
@@ -20,5 +19,5 @@ func populateCollection(collection *book.Collection) {
 		panic(err)
 	}
 
-	json.Unmarshal(byteValue, &collection)
+	json.Unmarshal(byteValue, c)
 }

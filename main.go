@@ -9,7 +9,7 @@ import (
 
 func main() {
 	var collection book.Collection
-	populateCollection(&collection)
+	collection.Populate()
 
 	collection.AddBook("The Alchemist", "Paulo Coelho", "Some Publisher", 200, 1989)
 

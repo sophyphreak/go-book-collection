@@ -1,0 +1,20 @@
+{
+	"collection": [
+		{
+			"id": 0,
+			"title": "The Alchemist",
+			"author": "Paulo Coelho",
+			"publisher": "Some Publisher",
+			"pages": 200,
+			"publicationYear": 1989
+		},
+		{
+			"id": 1,
+			"title": "The Alchemist",
+			"author": "Paulo Coelho",
+			"publisher": "Some Publisher",
+			"pages": 200,
+			"publicationYear": 1989
+		}
+	]
+}
