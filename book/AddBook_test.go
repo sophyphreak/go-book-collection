@@ -1,6 +1,9 @@
 package book
 
-import "testing"
+import (
+	"os"
+	"testing"
+)
 
 func TestAddBook(t *testing.T) {
 	var c Collection
@@ -29,4 +32,5 @@ func TestAddBook(t *testing.T) {
 	if book.PublicationYear != publicationYear {
 		t.Errorf("book.PublicationYear should be %d instead got %d", publicationYear, book.PublicationYear)
 	}
+	os.Remove("collection.json")
 }

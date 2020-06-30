@@ -1,6 +1,7 @@
 package book
 
 import (
+	"os"
 	"testing"
 )
 
@@ -13,4 +14,5 @@ func TestPopulate(t *testing.T) {
 
 	var c Collection
 	c.Populate()
+	os.Remove("collection.json")
 }
