@@ -21,10 +21,10 @@ func TestAddBook(t *testing.T) {
 		t.Errorf("book.Title should be %s instead got %s", title, book.Title)
 	}
 	if book.Author != author {
-		t.Errorf("book.Title should be %s instead got %s", author, book.Author)
+		t.Errorf("book.Author should be %s instead got %s", author, book.Author)
 	}
 	if book.Publisher != publisher {
-		t.Errorf("book.Title should be %s instead got %s", publisher, book.Publisher)
+		t.Errorf("book.Publisher should be %s instead got %s", publisher, book.Publisher)
 	}
 	if book.Pages != pages {
 		t.Errorf("book.Pages should be %d instead got %d", pages, book.Pages)
