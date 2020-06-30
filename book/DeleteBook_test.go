@@ -1,6 +1,9 @@
 package book
 
-import "testing"
+import (
+	"os"
+	"testing"
+)
 
 func TestDeleteBook(t *testing.T) {
 	var c Collection
@@ -14,4 +17,5 @@ func TestDeleteBook(t *testing.T) {
 	if err == nil {
 		t.Errorf("Delete book with index out of bounds succeeded when it should've failed")
 	}
+	os.Remove("collection.json")
 }
