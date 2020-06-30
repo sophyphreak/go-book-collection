@@ -1,6 +1,9 @@
 package book
 
-import "testing"
+import (
+	"os"
+	"testing"
+)
 
 func TestUpdateTitle(t *testing.T) {
 	var c Collection
@@ -19,6 +22,7 @@ func TestUpdateTitle(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected an error but instead recieved nil")
 	}
+	os.Remove("collection.json")
 }
 
 func TestUpdateAuthor(t *testing.T) {
@@ -38,6 +42,7 @@ func TestUpdateAuthor(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected an error but instead recieved nil")
 	}
+	os.Remove("collection.json")
 }
 
 func TestUpdatePublisher(t *testing.T) {
@@ -57,6 +62,7 @@ func TestUpdatePublisher(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected an error but instead recieved nil")
 	}
+	os.Remove("collection.json")
 }
 
 func TestUpdatePages(t *testing.T) {
@@ -76,6 +82,7 @@ func TestUpdatePages(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected an error but instead recieved nil")
 	}
+	os.Remove("collection.json")
 }
 
 func TestUpdatePublicationYear(t *testing.T) {
@@ -95,4 +102,5 @@ func TestUpdatePublicationYear(t *testing.T) {
 	if err == nil {
 		t.Errorf("Expected an error but instead recieved nil")
 	}
+	os.Remove("collection.json")
 }
