@@ -42,4 +42,15 @@ func TestFindByID(t *testing.T) {
 	if i != 1 {
 		t.Errorf("Returned index should be 1 but instead recieved %d", i)
 	}
+
+	i, foundBook, err = c.findByID(-1)
+	if err == nil {
+		t.Errorf("Incorrectly recieved nil error message")
+	}
+	if (foundBook != Book{}) {
+		t.Errorf("Return value should be %+v but instead recieved %+v", Book{}, foundBook)
+	}
+	if i != 0 {
+		t.Errorf("Returned index should be 0 but instead recieved %d", i)
+	}
 }
